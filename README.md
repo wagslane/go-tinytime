@@ -1,7 +1,7 @@
 # go-tinytime
 A tiny time object in Go. Tinytime uses **4 bytes** of memory vs the **24 bytes** of a standard time.Time{}
 
-A tinytime only has *day* precision. It has no knowledge of hours, minutes, seconds, or timezones.
+A tinytime only supports dates from `1970` to `2106`. It uses a unix timestamp as a `uint32`.
 
 [![](https://godoc.org/github.com/lane-c-wagner/go-tinytime?status.svg)](https://godoc.org/github.com/lane-c-wagner/go-tinytime)
 
@@ -32,11 +32,10 @@ func main(){
 }
 ```
 
-## Need More Date Ranges? Go-TinyTime
+## Need More Date Ranges? Go-TinyDate
 
-Unix timestamps only supports dates from `1970` to `2106`. Day-month-year supports dates from year `0` to year `65535`.
-If you need a larger date range, take a look at [go-tinydate](https://github.com/lane-c-wagner/go-tinydate) which
-uses `day-month-year` underneath. Keep in mind go-tinydate doesn't support more than `day` precision.
+Unix timestamps only supports dates from `1970` to `2106`.
+If you need a larger date range, take a look at [go-tinydate](https://github.com/lane-c-wagner/go-tinydate) which uses `day-month-year` underneath. Keep in mind go-tinydate doesn't support more than `day` precision.
 
 ## Why?
 
