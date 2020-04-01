@@ -72,3 +72,52 @@ func (tt TinyTime) Date() (year int, month time.Month, day int) {
 	tm := tt.ToTime()
 	return tm.Date()
 }
+
+// Clock returns the hour, minute, and second within the day specified by tt
+func (tt TinyTime) Clock() (hour, min, sec int) {
+	tm := tt.ToTime()
+	return tm.Clock()
+}
+
+// Hour returns the hour within the day specified by tt, in the range [0, 23]
+func (tt TinyTime) Hour() int {
+	tm := tt.ToTime()
+	return tm.Hour()
+}
+
+// Minute returns the minute offset within the hour specified by tt, in the range [0, 59]
+func (tt TinyTime) Minute() int {
+	tm := tt.ToTime()
+	return tm.Minute()
+}
+
+// Second returns the second offset within the minute specified by tt, in the range [0, 59]
+func (tt TinyTime) Second() int {
+	tm := tt.ToTime()
+	return tm.Second()
+}
+
+// Round returns the result of rounding t to the nearest multiple of d (since the zero time).
+// The rounding behavior for halfway values is to round up.
+// If d <= 0, Round returns t stripped of any monotonic clock reading but otherwise unchanged.
+//
+// Round operates on the time as an absolute duration since the
+// zero time; it does not operate on the presentation form of the
+// time. Thus, Round(Hour) may return a time with a non-zero
+// minute, depending on the time's Location.
+func (tt TinyTime) Round(d time.Duration) time.Time {
+	tm := tt.ToTime()
+	return tm.Round(d)
+}
+
+// Truncate returns the result of rounding t down to a multiple of d (since the zero time).
+// If d <= 0, Truncate returns t stripped of any monotonic clock reading but otherwise unchanged.
+//
+// Truncate operates on the time as an absolute duration since the
+// zero time; it does not operate on the presentation form of the
+// time. Thus, Truncate(Hour) may return a time with a non-zero
+// minute, depending on the time's Location.
+func (tt TinyTime) Truncate(d time.Duration) time.Time {
+	tm := tt.ToTime()
+	return tm.Truncate(d)
+}

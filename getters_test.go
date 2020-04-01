@@ -76,3 +76,38 @@ func TestDate(t *testing.T) {
 	assert.Equal(t, time.April, month)
 	assert.Equal(t, 1, day)
 }
+
+func TestClock(t *testing.T) {
+	tt := New(1585750374)
+	hour, minute, second := tt.Clock()
+	assert.Equal(t, 14, hour)
+	assert.Equal(t, 12, minute)
+	assert.Equal(t, 54, second)
+}
+
+func TestHour(t *testing.T) {
+	tt := New(1585750374)
+	assert.Equal(t, 14, tt.Hour())
+}
+
+func TestMinute(t *testing.T) {
+	tt := New(1585750374)
+	assert.Equal(t, 12, tt.Minute())
+}
+
+func TestSecond(t *testing.T) {
+	tt := New(1585750374)
+	assert.Equal(t, 54, tt.Second())
+}
+
+func TestRound(t *testing.T) {
+	tt := New(1585750374)
+	rounded := tt.Round(time.Hour)
+	assert.Equal(t, time.Unix(1585749600, 0).UTC(), rounded)
+}
+
+func TestTruncate(t *testing.T) {
+	tt := New(1585751520)
+	truncated := tt.Truncate(time.Hour)
+	assert.Equal(t, time.Unix(1585749600, 0).UTC(), truncated)
+}
