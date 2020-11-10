@@ -1,5 +1,5 @@
 # go-tinytime
-A tiny time object in Go. Tinytime uses **4 bytes** of memory vs the **24 bytes** of a standard time.Time{}
+A tiny time object in Go. Tinytime uses **4 bytes** of memory vs the **24 bytes** of a standard `time.Time{}`
 
 A tinytime only supports dates from `1970` to `2106`. It uses a unix timestamp as a `uint32`.
 
