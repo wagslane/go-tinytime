@@ -3,12 +3,12 @@ A tiny time object in Go. Tinytime uses **4 bytes** of memory vs the **24 bytes*
 
 A tinytime only supports dates from `1970` to `2106`. It uses a unix timestamp as a `uint32`.
 
-[![](https://godoc.org/github.com/lane-c-wagner/go-tinytime?status.svg)](https://godoc.org/github.com/lane-c-wagner/go-tinytime)
+[![](https://godoc.org/github.com/wagslane/go-tinytime?status.svg)](https://godoc.org/github.com/wagslane/go-tinytime)
 
 ## ⚙️ Installation
 
 ```bash
-go get github.com/lane-c-wagner/go-tinytime
+go get github.com/wagslane/go-tinytime
 ```
 
 ## 🚀 Quick Start
@@ -17,7 +17,7 @@ go get github.com/lane-c-wagner/go-tinytime
 package main
 
 import (
-    tinytime "github.com/lane-c-wagner/go-tinytime"
+    tinytime "github.com/wagslane/go-tinytime"
 )
 
 func main(){
@@ -35,7 +35,7 @@ func main(){
 ## Need More Date Ranges? Go-TinyDate
 
 Unix timestamps only supports dates from `1970` to `2106`.
-If you need a larger date range, take a look at [go-tinydate](https://github.com/lane-c-wagner/go-tinydate) which uses `day-month-year` underneath. Keep in mind go-tinydate doesn't support more than `day` precision.
+If you need a larger date range, take a look at [go-tinydate](https://github.com/wagslane/go-tinydate) which uses `day-month-year` underneath. Keep in mind go-tinydate doesn't support more than `day` precision.
 
 ## Why?
 
@@ -55,7 +55,7 @@ Submit an issue (above in the issues tab)
 
 ## API
 
-Godoc: https://godoc.org/github.com/lane-c-wagner/go-tinytime
+Godoc: https://godoc.org/github.com/wagslane/go-tinytime
 
 Tinytime mirrors the [time.Time](https://golang.org/pkg/time/) API for the most part. The only methods that are *not* included are the ones that makes no sense without timezone support.
 
