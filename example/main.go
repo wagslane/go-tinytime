@@ -12,5 +12,5 @@ func main() {
 
 	tt = tt.Add(time.Hour * 48)
 	fmt.Println(tt)
-	// prints "2020-04-05"
+	// prints "2020-04-03T14:12:54Z"
 }
