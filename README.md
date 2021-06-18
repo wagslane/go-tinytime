@@ -28,7 +28,7 @@ func main(){
     
     tt = tt.Add(time.Hour * 48)
     fmt.Println(tt)
-    // prints 2020-04-05
+    // prints 2020-04-03T14:12:54Z
 }
 ```
 
@@ -43,9 +43,10 @@ If you don't have resource constraints, then don't use tinytime! Use the standar
 
 go-tinytime works well in the following situations:
 
-* You are working in embedded systems where memory is a luxury
-* You are storing many dates and smaller memory footprint is desired
-* You are 101% sure you don't need a date range larger than 1970-2106
+* You're okay with only to-the-second precision
+* You're working in embedded systems where memory is a luxury
+* You're storing many dates and smaller memory footprint is desired
+* You're 101% sure you don't need a date range larger than 1970-2106
 
 ## 💬 Contact
 
