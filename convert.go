@@ -1,7 +1,7 @@
 package tinytime
 
 import (
-	"fmt"
+	"errors"
 	"math"
 	"time"
 )
@@ -13,7 +13,7 @@ func FromTime(t time.Time) (TinyTime, error) {
 	t = t.UTC()
 	unix := t.Unix()
 	if unix > math.MaxUint32 {
-		return TinyTime{}, fmt.Errorf("tinytime FromTime: unix must be less than %v", math.MaxUint32)
+		return TinyTime{}, errors.New("tinytime FromTime: unix must be less than math.MaxUint32")
 	}
 	return TinyTime{
 		unix: uint32(unix),

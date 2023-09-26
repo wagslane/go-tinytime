@@ -9,9 +9,6 @@ import (
 )
 
 func TestSizes(t *testing.T) {
-	tt := TinyTime{}
-	assert.Equal(t, uintptr(4), unsafe.Sizeof(tt))
-
-	tm := time.Now().UTC()
-	assert.Equal(t, uintptr(24), unsafe.Sizeof(tm))
+	assert.Equal(t, uintptr(4), unsafe.Sizeof(TinyTime{}))
+	assert.Equal(t, uintptr(24), unsafe.Sizeof(time.Now().UTC()))
 }
