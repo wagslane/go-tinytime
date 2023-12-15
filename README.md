@@ -22,8 +22,8 @@ import (
 
 func main(){
     tt, err := tinytime.New(1585750374)
-	if err != nil {
-		fmt.Println(err.Error())
+    if err != nil {
+        fmt.Println(err.Error())
     }
     
     tt = tt.Add(time.Hour * 48)
